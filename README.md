@@ -55,7 +55,7 @@ After eliminating row 1:
 
 ## 🧠 Educational Goals
 
-This toolkit is created for **demonstration and understanding**, not for high-performance computation. Each algorithm is written with clarity in mind, mimicking manual row operations taught in linear algebra courses.
+This toolkit is created for **demonstration and understanding**, not for high-performance computation. Each algorithm is written with clarity in mind, mimicking manual row operations taught in linear algebra course in **AUSMT**.
 
 ---
 
