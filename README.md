@@ -19,6 +19,9 @@ This repository is a temporary submission for showcasing a **Linear Algebra proj
 - ✅ **Verbose Output**  
   Every step (row swaps, normalizations, eliminations) is printed in detail to help users understand the transformation process.
 
+- ✅ **Graphical Interface with PyQt**  
+  Includes a simple GUI built with PyQt for interactive input and visualization.
+
 ---
 
 ## 🧪 Example Output
