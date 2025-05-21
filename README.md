@@ -45,16 +45,12 @@ After eliminating row 1:
 ```
 
 ---
+## 🖼️ Project Screenshot
 
-## 📂 Files
+Here’s how the PyQt GUI of the Linear Algebra Toolkit looks:
 
-- `main.py` — Contains:
-  - `gauss_jordan(M)`
-  - `invert_matrix(A)`
-  - `det_by_row_ops(A)`
-  - `print_matrix()` utility
+![Linear Algebra GUI](gui_preview.png)
 
----
 
 ## 🧠 Educational Goals
 
