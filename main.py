@@ -602,7 +602,7 @@ class MatrixApp(QWidget):
     def build_equation_grid(self):
         dimensions = self.read_dimensions(self.rows_input, self.cols_input)
         if dimensions is None:
-            return
+            return False
         self.rows, self.cols = dimensions
         self.clear_layout(self.matrix_grid)
         self.entries = []
@@ -638,11 +638,12 @@ class MatrixApp(QWidget):
 
         self.set_status(f"Equation editor ready · {self.rows} equations, {self.cols} variables")
         self.result_panel.hide()
+        return True
 
     def build_square_grid(self):
         dimension = self.read_dimensions(self.size_input)
         if dimension is None:
-            return
+            return False
         self.size = dimension[0]
         self.clear_layout(self.matrix_grid)
         self.entries = []
@@ -670,6 +671,7 @@ class MatrixApp(QWidget):
 
         self.set_status(f"Matrix editor ready · {self.size} × {self.size}")
         self.result_panel.hide()
+        return True
 
     def read_dimensions(self, *fields):
         try:
