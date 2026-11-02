@@ -104,7 +104,6 @@ Linear_Algebra/
 ├── main.py          # PyQt6 desktop application and matrix editor
 ├── functions.py     # Gauss–Jordan, inverse, and determinant routines
 ├── requirements.txt # Python dependencies
-├── gui_preview.png  # Original interface preview
 └── README.md
 ```
 
