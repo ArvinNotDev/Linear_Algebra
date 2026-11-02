@@ -34,6 +34,7 @@ class MatrixApp(QWidget):
 
     def __init__(self):
         super().__init__()
+        self.setObjectName("appRoot")
         self.setWindowTitle("Linear Algebra Studio")
         self.resize(1240, 860)
         self.setMinimumSize(960, 700)
@@ -510,7 +511,6 @@ class MatrixApp(QWidget):
                 padding: 5px;
             }}
         """)
-        self.setObjectName("appRoot")
 
     # ------------------------------------------------------------------
     # Workflow and matrix editor
