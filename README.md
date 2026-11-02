@@ -1,87 +1,120 @@
+# Linear Algebra Studio
 
-# 📘 Linear Algebra Toolkit (Python)
+A desktop application for exploring core linear algebra operations through an interactive matrix editor and step-by-step row-reduction output.
 
-This repository is a temporary submission for showcasing a **Linear Algebra project** to **Dr. Hosseinzadeh**. It provides implementations of key matrix operations using Python and NumPy, designed for clarity, traceability, and educational use.
+Built with **Python**, **PyQt6**, and **NumPy**, the project brings common matrix calculations into one focused workspace.
 
----
-
-## 🔧 Features
-
-- ✅ **Gauss-Jordan Elimination**  
-  Solves systems of linear equations and detects inconsistent or infinite solution cases.
-
-- ✅ **Matrix Inversion**  
-  Computes the inverse of a square matrix using row operations.
-
-- ✅ **Determinant Calculation**  
-  Calculates the determinant via row-reduction, accounting for row swaps.
-
-- ✅ **Verbose Output**  
-  Every step (row swaps, normalizations, eliminations) is printed in detail to help users understand the transformation process.
-
-- ✅ **Graphical Interface with PyQt**  
-  Includes a simple GUI built with PyQt for interactive input and visualization.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![GUI](https://img.shields.io/badge/GUI-PyQt6-41CD52?logo=qt&logoColor=white)
+![Numerical library](https://img.shields.io/badge/Numerical%20computing-NumPy-013243?logo=numpy&logoColor=white)
 
 ---
 
-## 🧪 Example Output
+## Overview
 
-You will see console outputs like:
+Linear Algebra Studio provides a graphical interface for entering matrices, running common operations, and reviewing the results. The underlying algorithms use elementary row operations, while their intermediate steps are printed to the terminal for learning and inspection.
 
-```
-Initial Augmented Matrix:
-   2.000    1.000    5.000
-   4.000    4.000   12.000
+The project was originally developed as a Linear Algebra course project and is maintained as a standalone educational application.
 
-Normalized row 0 by pivot 2.0
-After making pivot in row 0 = 1:
-   1.000    0.500    2.500
-   4.000    4.000   12.000
+## Features
 
-Eliminated row 1 using row 0 (factor: 4.0)
-After eliminating row 1:
-   1.000    0.500    2.500
-   0.000    2.000    2.000
-```
+### System of linear equations
+- Enter the number of equations and variables.
+- Build and edit an augmented matrix directly in the application.
+- Solve supported systems using Gauss–Jordan elimination.
+- Identify inconsistent systems and systems with infinitely many solutions.
 
----
-## 🖼️ Project Screenshot
+### Square matrix operations
+- Calculate the inverse of a square matrix using row operations.
+- Calculate a determinant while accounting for row swaps.
+- Start with an identity matrix as a convenient input template.
 
-Here’s how the PyQt GUI of the Linear Algebra Toolkit looks:
+### Desktop experience
+- Modern dark and light appearances.
+- Dedicated workflows for systems of equations and square matrices.
+- Adjustable matrix dimensions, with support for dimensions from 1 to 20.
+- Recent-matrix history with load, delete, and clear actions.
+- Inline results with a copy-to-clipboard action.
+- Scrollable matrix editing area for larger inputs.
+- Input validation and clear error messages.
 
-![Linear Algebra GUI](gui_preview.png)
+### Educational output
+The numerical routines print their intermediate steps to the terminal, including row swaps, pivot normalization, and elimination operations. This makes it possible to follow how the input matrix is transformed.
 
-
-## 🧠 Educational Goals
-
-This toolkit is created for **demonstration and understanding**, not for high-performance computation. Each algorithm is written with clarity in mind, mimicking manual row operations taught in linear algebra course in **AUSMT**.
-
----
-
-## ▶️ Getting Started
+## Getting started
 
 ### Requirements
 
-- Python 3.x
+- Python 3.10 or newer
 - NumPy
+- PyQt6
 
-### Run Example
+### Installation
+
+Clone the repository:
 
 ```bash
-pip install numpy
+git clone https://github.com/ArvinNotDev/Linear_Algebra.git
+cd Linear_Algebra
+```
+
+Create and activate a virtual environment (recommended):
+
+**Windows — PowerShell**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Launch the application:
+
+```bash
 python main.py
 ```
 
-You can modify matrices inside `main.py` to test different operations.
+## Using the application
 
----
+1. Choose **System of equations** or **Square matrix** from the workflow selector.
+2. Set the required dimensions and select **Apply size**.
+3. Enter your coefficients or matrix values.
+4. Run the relevant operation:
+   - **Solve system** for a supported system of equations.
+   - **Inverse** to calculate a matrix inverse.
+   - **Determinant** to calculate the determinant.
+5. Review the result in the application. Use the history panel to reload a previously processed matrix.
 
-## 🧑‍🏫 Instructor
+The history is kept in memory for the current application session and holds up to 12 entries.
 
-Project submitted to: **Dr. Hosseinzadeh**
+## Project structure
 
----
+```text
+Linear_Algebra/
+├── main.py          # PyQt6 desktop application and matrix editor
+├── functions.py     # Gauss–Jordan, inverse, and determinant routines
+├── requirements.txt # Python dependencies
+└── README.md
+```
 
-## 📝 License
+## Implementation notes
 
-This project is for academic and demonstrative purposes only.
+- The equation solver currently expects a square coefficient system: the number of equations must match the number of variables.
+- Matrix dimensions are limited to 1–20 in the graphical interface.
+- The numerical routines use floating-point arithmetic, so results may contain small rounding differences.
+- Intermediate calculation steps are written to the terminal where the application was launched.
+- Matrix history is session-only; it is not written to disk.
+
+## License
+
+No license has been specified for this repository. Please contact the repository owner before redistributing or reusing the project beyond applicable default copyright permissions.
